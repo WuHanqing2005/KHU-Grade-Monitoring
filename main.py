@@ -118,6 +118,7 @@ def load_config():
         except Exception as e:
             print(f"[WARN] Failed to load config.json: {e}")
             print(f"[WARN] Using default configuration values.")
+            print(f"[WARN] Check config.json for JSON syntax errors (e.g., use 'false' not 'False', 'true' not 'True').")
     else:
         print(f"[INFO] config.json not found. Creating default configuration file...")
         try:
@@ -141,6 +142,11 @@ CHROME_DEBUG_PORT = CONFIG["chrome_debug_port"]
 PUSHPLUS_TOKEN = CONFIG["pushplus_token"]
 PUSHPLUS_URL = CONFIG["pushplus_url"]
 TEST_MODE = CONFIG["test_mode"]
+
+# Validate Pushplus token
+if not PUSHPLUS_TOKEN:
+    print("[WARN] Pushplus token is empty! Notifications will fail.")
+    print("[WARN] Please set 'pushplus_token' in config.json")
 
 # Auto-detect Chrome path (not stored in config.json since it varies per system)
 CHROME_PATH = find_chrome_path()
