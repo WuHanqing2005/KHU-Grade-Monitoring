@@ -1,5 +1,7 @@
 # Kyung Hee University Grade Monitor
 
+![Demo animation](assets/demo.gif)
+
 A Python-based daemon-grade monitoring system that automatically tracks grade postings on the Kyung Hee University (KHU) portal. It periodically refreshes the grade inquiry page, detects changes, and sends real-time notifications via **Pushplus**.
 
 ---
@@ -28,12 +30,6 @@ A Python-based daemon-grade monitoring system that automatically tracks grade po
 ![Pushplus notification example](assets/pushplus-screenshot.png)
 
 *Rich HTML push notification delivered to mobile, displaying the full grade table with color-coded GPA and letter grades.*
-
-### Video Demonstration
-
-![Demo animation](assets/demo.gif)
-
-*Full walkthrough: launching the monitor, login process, and receiving a Pushplus notification in real time.*
 
 ---
 
